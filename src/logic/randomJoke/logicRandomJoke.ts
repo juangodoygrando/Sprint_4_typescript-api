@@ -1,5 +1,5 @@
 import { getRandomJoke, urlRandomDadJoke } from "../../services/api/apicall";
-import type { Joke, jokeApiResponse } from "../../services/api/interface";
+import type { Joke, jokeApiResponse } from "../../services/api/apiInterface";
 
 import { printJoke } from "../../ui/randomJoke/uiRandomJoke";
 

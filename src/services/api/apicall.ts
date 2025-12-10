@@ -1,4 +1,4 @@
-import type { jokeApiResponse } from "./interface";
+import type { jokeApiResponse } from "./apiInterface";
 
 export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;
 

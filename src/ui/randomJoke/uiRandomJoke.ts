@@ -1,4 +1,4 @@
-import type { Joke } from "../../services/api/interface";
+import type { Joke } from "../../services/api/apiInterface";
 
 export const jokeContainer  = document.getElementById(
   "output_joke"
