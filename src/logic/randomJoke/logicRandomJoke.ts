@@ -1,4 +1,4 @@
-import { getRandomJoke, urlRandomDadJoke } from "../../services/api/apicall";
+import { getRandomJoke, urlRandomDadJoke } from "../../services/api/apiCall.ts";
 import type { Joke, jokeApiResponse } from "../../services/api/apiInterface";
 
 import { printJoke } from "../../ui/randomJoke/uiRandomJoke";

@@ -1,3 +1,6 @@
+import { getDate } from "../../services/date/getDate";
+
+
 const ratingDiv = document.getElementById("ratingDiv") as HTMLDivElement;
 
 const happyIcon = document.getElementById("happyIcon") as HTMLImageElement;
@@ -13,8 +16,7 @@ export function ratingListener() {
     if (eventTarget.tagName === "DIV") {
       console.log("Clik en:", event);
     }
-    const hoy = new Date()
-    console.log(hoy.toLocaleDateString('es-ES'))
+    console.log(getDate())
 
     if (allIcons || !ratingDiv.contains(eventTarget)) {
       allIcons.forEach((icon) => icon.classList.remove("grayscale"));
