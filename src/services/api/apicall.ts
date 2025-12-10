@@ -1,11 +1,14 @@
+import type { jokeApiResponse } from "./interface";
+
 export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;
 
-export async function newApiCall(url: string) {
+export async function getRandomJoke(
+  url: string
+): Promise<jokeApiResponse | undefined> {
   try {
     const resp = await fetch(url, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
         Accept: "application/json",
       },
     });
@@ -13,16 +16,13 @@ export async function newApiCall(url: string) {
     if (!resp.ok) {
       throw new Error(`${resp.status}`);
     }
-    const data = await resp.json();
+    const data: jokeApiResponse = await resp.json();
 
     return data;
   } catch (error) {
     if (error instanceof Error) {
       console.error("Error capturado: ", error.message);
     }
-    return
+    return undefined;
   }
 }
-
-
-console.log(object)
