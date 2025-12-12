@@ -1,29 +1,23 @@
 import { getRandomJoke, urlRandomDadJoke } from "../../services/api/apiCall.ts";
 import type { Joke, jokeApiResponse } from "../../services/api/apiInterface";
 
-import { printJoke } from "../../ui/randomJoke/uiRandomJoke";
-
-
-export function covertResponse(dataApi:jokeApiResponse | undefined): Joke|undefined{
-  if(dataApi){
-    const dataConvert:Joke={
-      joke:dataApi.joke
-    }
-    return dataConvert
-  }else{
-    return undefined
+export function covertResponse(
+  dataApi: jokeApiResponse | undefined
+): string | undefined {
+  if (dataApi) {
+    const dataConvert: Joke = {
+      joke: dataApi.joke,
+    };
+    return dataConvert.joke;
+  } else {
+    return undefined;
   }
 }
 
-async function loadAndPrintJoke() {
-  const newjoke= covertResponse(await getRandomJoke(urlRandomDadJoke));
-  if(newjoke){
-    printJoke( newjoke );
-  }
-}
+export async function getJoke(): Promise<string> {
+  const joke = await covertResponse(await getRandomJoke(urlRandomDadJoke));
 
-export async function initJokeFeature(button: any) {
-  loadAndPrintJoke();
+  if (!joke) throw new Error("Invalid joke from API");
 
-  button.addEventListener("click", loadAndPrintJoke);
+  return joke;
 }
