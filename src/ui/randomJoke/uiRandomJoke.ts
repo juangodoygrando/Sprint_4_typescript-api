@@ -1,4 +1,4 @@
-import type { Joke } from "../../services/api/apiInterface";
+
 
 export const jokeContainer  = document.getElementById(
   "output_joke"
@@ -8,9 +8,9 @@ export const nextJokeButton = document.getElementById(
   "next_joke"
 ) as HTMLButtonElement;
 
-export function printJoke( joke: Joke) {
+export function printJoke( joke: string) {
 
   
-    jokeContainer.textContent = joke.joke;
+    jokeContainer.textContent = joke;
   
 }
