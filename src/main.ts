@@ -1,4 +1,4 @@
+import { initJoke } from "./logic/jokeController";
 import "./style.css";
-import { showAndPrintJoke } from "./logic/manager";
 
-showAndPrintJoke();
+initJoke();
