@@ -17,7 +17,7 @@ export function covertResponse(
 }
 
 export async function getJoke(): Promise<string> {
-  const joke = await covertResponse(await getRandomJoke(urlRandomDadJoke));
+  const joke = covertResponse(await getRandomJoke(urlRandomDadJoke));
 
   if (!joke) throw new Error("Invalid joke from API");
 
