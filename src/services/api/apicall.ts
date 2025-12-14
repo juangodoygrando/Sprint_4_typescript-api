@@ -1,10 +1,9 @@
-import type { jokeApiResponse } from "./apiInterface";
+import {  jokeDadSchema, type jokeDadResponse } from "./apiInterface";
+
 
 export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;
 
-export async function getRandomJoke(
-  url: string
-): Promise<jokeApiResponse | undefined> {
+export async function getRandomJoke(  url: string): Promise<jokeDadResponse | undefined> {
   try {
     const resp = await fetch(url, {
       method: "GET",
@@ -16,7 +15,8 @@ export async function getRandomJoke(
     if (!resp.ok) {
       throw new Error(`${resp.status}`);
     }
-    const data: jokeApiResponse = await resp.json();
+    const json = await resp.json();
+    const data = jokeDadSchema.parse(json)
 
     return data;
   } catch (error) {
@@ -26,3 +26,4 @@ export async function getRandomJoke(
     return undefined;
   }
 }
+
