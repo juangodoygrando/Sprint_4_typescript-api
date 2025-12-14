@@ -14,7 +14,7 @@ const weatherSchema = z.object({
   }),
 });
 
-const weatherSchemaTransformed = weatherSchema.transform((data) => ({
+export const weatherSchemaTransformed = weatherSchema.transform((data) => ({
   description: data.weather[0].description,
   icon: data.weather[0].icon,
   temp: data.main.temp,

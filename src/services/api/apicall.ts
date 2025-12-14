@@ -1,23 +1,21 @@
-import { jokeDadSchema, type jokeDadResponse } from "../../logic/randomDadJoke/jokeDadSchema";
-
-
+import type z from "zod";
 
 export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;
+export const urlOpenWeather = import.meta.env.VITE_urlOpenWeather;
 
-export async function getRandomJoke(  url: string): Promise<jokeDadResponse | undefined> {
+export async function apiCall<T>(
+  url: string,
+  schema: z.ZodSchema<T>,
+  options?: RequestInit
+): Promise<T | undefined> {
   try {
-    const resp = await fetch(url, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-      },
-    });
+    const resp = await fetch(url, options);
 
     if (!resp.ok) {
       throw new Error(`${resp.status}`);
     }
     const json = await resp.json();
-    const data = jokeDadSchema.parse(json)
+    const data = schema.parse(json);
 
     return data;
   } catch (error) {
@@ -27,4 +25,3 @@ export async function getRandomJoke(  url: string): Promise<jokeDadResponse | un
     return undefined;
   }
 }
-

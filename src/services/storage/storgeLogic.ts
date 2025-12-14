@@ -1,4 +1,4 @@
-import type { storageStructure } from "./interfaceStorage";
+import type { storageStructure } from "./storageSchema";
 
 let reportJokes: storageStructure[] = JSON.parse(
   localStorage.getItem("reportJokes") ?? "[]"

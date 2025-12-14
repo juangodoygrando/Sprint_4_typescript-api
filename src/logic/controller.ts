@@ -1,7 +1,7 @@
 import { initJokeUI } from "../ui/ratingJoke/uiRatingJoke";
-import { getJoke } from "./randomDadJoke/logicRandomJoke";
+import { getDadJoke } from "./randomDadJoke/logicRandomJoke";
 
 export async function initJoke(): Promise<void> {
-  let joke: string = await getJoke();
+  let joke: string|undefined = await getDadJoke();
   initJokeUI(joke);
 }

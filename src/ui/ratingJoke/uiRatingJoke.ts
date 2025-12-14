@@ -1,4 +1,5 @@
-import { getJoke } from "../../logic/randomDadJoke/logicRandomJoke";
+
+import { getDadJoke } from "../../logic/randomDadJoke/logicRandomJoke";
 import { saveRatings } from "../../logic/ratingsJoke/ratingsLogic";
 import { getRatings } from "../../services/storage/storgeLogic";
 import { nextJokeButton, printJoke } from "../randomJoke/uiRandomJoke";
@@ -9,12 +10,12 @@ export const allIcons = document.querySelectorAll(".iconImage");
 
 export let selectedRating: string | undefined = undefined;
 
-function resetRatings():void {
+function resetRatings(): void {
   selectedRating = undefined;
   allIcons.forEach((icon) => icon.classList.remove("grayscale"));
 }
 
-function ratingListeners(e: MouseEvent):void {
+function ratingListeners(e: MouseEvent): void {
   const target = e.target as HTMLElement;
 
   if (!target.classList.contains("iconImage")) return;
@@ -27,7 +28,7 @@ function ratingListeners(e: MouseEvent):void {
   selectedRating = target.dataset.value;
 }
 
-function clickOutside(e: MouseEvent):void {
+function clickOutside(e: MouseEvent): void {
   const target = e.target as HTMLElement;
 
   const isIcon = target.classList.contains("iconImage");
@@ -37,19 +38,24 @@ function clickOutside(e: MouseEvent):void {
   }
 }
 
-export async function initJokeUI(joke: string): Promise<void> {
-  let newJoke: string = joke;
-  printJoke(newJoke);
+export async function initJokeUI(joke: string | undefined): Promise<void> {
+  let newJoke: string | undefined = joke;
+  if (newJoke) {
+    printJoke(newJoke);
+  }
 
   ratingDiv.addEventListener("click", ratingListeners);
   document.addEventListener("click", clickOutside);
 
   nextJokeButton.addEventListener("click", async () => {
-    saveRatings(newJoke, selectedRating);
+    if (newJoke) {
+      saveRatings(newJoke, selectedRating);
+    }
 
-    newJoke = await getJoke();
-
-    printJoke(newJoke);
+    newJoke = await getDadJoke();
+    if (newJoke) {
+      printJoke(newJoke);
+    }
 
     resetRatings();
     console.log(getRatings());

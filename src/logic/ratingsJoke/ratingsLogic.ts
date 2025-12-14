@@ -1,5 +1,5 @@
 import { getDate } from "../../services/date/getDate";
-import type { storageStructure } from "../../services/storage/interfaceStorage";
+import type { storageStructure } from "../../services/storage/storageSchema";
 import { addRating } from "../../services/storage/storgeLogic";
 
 

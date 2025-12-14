@@ -1,13 +1,14 @@
-import { getRandomJoke, urlRandomDadJoke } from "../../services/api/apiCall";
+import { apiCall, urlRandomDadJoke } from "../../services/api/apiCall";
+import { jokeDadSchema } from "./jokeDadSchema";
 
 
 
-
-export async function getJoke(): Promise<string> {
-  
-  const joke=await getRandomJoke(urlRandomDadJoke)
-
-  if (!joke) throw new Error("Invalid joke from API");
-
-  return joke;
+export async function getDadJoke(): Promise<string | undefined> {
+  return apiCall(
+    urlRandomDadJoke,
+    jokeDadSchema,
+    {
+      headers: { Accept: "application/json" }
+    }
+  );
 }
