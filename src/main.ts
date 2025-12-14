@@ -1,4 +1,4 @@
-import { initJoke } from "./logic/jokeController";
+import { initJoke } from "./logic/controller";
 import "./style.css";
 
 initJoke();

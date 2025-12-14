@@ -1,4 +1,5 @@
-import {  jokeDadSchema, type jokeDadResponse } from "./apiInterface";
+import { jokeDadSchema, type jokeDadResponse } from "../../logic/randomDadJoke/jokeDadSchema";
+
 
 
 export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;

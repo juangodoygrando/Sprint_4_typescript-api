@@ -1,4 +1,4 @@
-import { getJoke } from "../../logic/randomJoke/logicRandomJoke";
+import { getJoke } from "../../logic/randomDadJoke/logicRandomJoke";
 import { saveRatings } from "../../logic/ratingsJoke/ratingsLogic";
 import { getRatings } from "../../services/storage/storgeLogic";
 import { nextJokeButton, printJoke } from "../randomJoke/uiRandomJoke";
