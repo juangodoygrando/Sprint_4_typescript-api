@@ -1,6 +1,5 @@
-import { initJoke } from "./logic/controller";
+import { initApp } from "./logic/controller";
 
 import "./style.css";
 
-initJoke();
-
+initApp()

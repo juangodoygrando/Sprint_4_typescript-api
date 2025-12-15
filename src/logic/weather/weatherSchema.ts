@@ -17,9 +17,9 @@ const weatherSchema = z.object({
 export const weatherSchemaTransformed = weatherSchema.transform((data) => ({
   description: data.weather[0].description,
   icon: data.weather[0].icon,
-  temp: data.main.temp,
-  temp_min: data.main.temp_min,
-  temp_max: data.main.temp_max,
+  temp: Math.floor(data.main.temp),
+  temp_min: Math.floor(data.main.temp_min),
+  temp_max: Math.floor(data.main.temp_max),
 }));
 
 export type weatherResponse = z.infer<typeof weatherSchemaTransformed>;
