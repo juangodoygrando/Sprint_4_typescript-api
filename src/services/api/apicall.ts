@@ -1,8 +1,5 @@
 import type z from "zod";
 
-export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;
-
-
 export async function apiCall<T>(
   url: string,
   schema: z.ZodSchema<T>,

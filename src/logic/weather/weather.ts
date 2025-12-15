@@ -1,4 +1,5 @@
 import { apiCall } from "../../services/api/apicall";
+import { APIKEY_OPENWEATHER, URL_OPENWEATHER } from "../../services/env";
 import { getCoordinates } from "../../services/location/location";
 import { printWeather } from "../../ui/weather/uiWeather";
 import {
@@ -6,13 +7,11 @@ import {
   type weatherResponse,
 } from "./weatherSchema";
 
-export const urlOpenWeather = import.meta.env.VITE_urlOpenWeather;
-export const apiKeyOpenWeather = import.meta.env.VITE_apiKeyOpenWeather;
 
 async function  getUrlWeather() {
   const { lat, lon } = await getCoordinates();
 
-  const url =`${urlOpenWeather}lat=${lat}&lon=${lon}&appid=${apiKeyOpenWeather}&units=metric`;
+  const url =`${URL_OPENWEATHER}lat=${lat}&lon=${lon}&appid=${APIKEY_OPENWEATHER}&units=metric`;
   return url;
 }
 

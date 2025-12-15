@@ -1,5 +1,6 @@
-import { getDadJoke } from "../../logic/randomDadJoke/logicRandomJoke";
+import { selectedApi } from "../../logic/controller";
 import { saveRatings } from "../../logic/ratingsJoke/ratingsLogic";
+
 import { getRatings } from "../../services/storage/storgeLogic";
 import {
   getNewBlob,
@@ -55,7 +56,7 @@ export async function initJokeUI(joke: string | undefined): Promise<void> {
       saveRatings(newJoke, selectedRating);
     }
 
-    newJoke = await getDadJoke();
+    newJoke = await selectedApi();
     getNewBlob();
     if (newJoke) {
       printJoke(newJoke);

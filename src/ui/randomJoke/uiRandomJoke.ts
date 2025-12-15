@@ -13,7 +13,7 @@ export function printJoke(joke: string): void {
 
 export function getNewBlob() {
   const randomBlob = Math.floor(Math.random() * 10) + 1;
-  const newUrl = `./public/blob/blob_${randomBlob}.svg`;
+  const newUrl = `/blob/blob_${randomBlob}.svg`;
 
   blobDiv.style.backgroundImage = `url('${newUrl}')`;
 }

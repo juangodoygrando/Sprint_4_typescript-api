@@ -1,6 +1,7 @@
-import { initApp } from "./logic/controller";
+import { initJoke } from "./logic/controller";
+import { initWeather } from "./logic/weather/weather";
 
 import "./style.css";
 
-initApp()
-
+await initJoke();
+await initWeather();
