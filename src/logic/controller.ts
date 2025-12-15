@@ -1,7 +1,7 @@
-import { initJokeUI } from "../ui/ratingJoke/uiRatingJoke";
-import { getDadJoke } from "./randomDadJoke/logicRandomJoke";
+import { initJoke } from "./randomDadJoke/logicRandomJoke";
+import { initWeather } from "./weather/weather";
 
-export async function initJoke(): Promise<void> {
-  let joke: string|undefined = await getDadJoke();
-  initJokeUI(joke);
+export async function initApp() {
+  await initJoke();
+  initWeather();
 }
