@@ -15,31 +15,42 @@
 
   <main>
     <div id="weather-widget"></div>
-    
 
 
-    <div class="bg-white bg-opacity-80 p-8 rounded-2xl shadow-lg max-w text-center">
-      <div class="text-4xl font-bold mb-6 p-8">
-        <h1 class="mb-6">Ready to smile?</h1>
-        <h3 id="output_joke" class="text-lg mb-6"></h3>
-        <div class="flex items-center justify-center gap-4 m-8 bg-red" id="ratingDiv">
+
+
+    <div id="blobDiv"
+      class="w-[90vw] max-w-3xl aspect-[1/1] bg-contain bg-center bg-no-repeat flex flex-col justify-center items-center"
+      style="background-image: url('./public/blob/blob_2.svg')">
+
+      <div class="w-full max-w-xl px-6 py-10
+              flex flex-col items-center text-center">
+
+        <h1 class="text-4xl font-bold mb-6">
+          Ready to smile?
+        </h1>
+
+        <h3 id="output_joke" class="text-lg font-bold mb-6"></h3>
+
+        <div class="flex justify-center gap-4 mb-8" id="ratingDiv">
           <div
-            class="iconImage h-12 w-12 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
+            class="iconImage h-16 w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
             id="happyIcon" data-value="3"><img class="w-full h-full object-cover pointer-events-none"
-              src="/image/happyIcon.svg" alt=""></div>
+              src="/icons/happyIcon.svg" alt=""></div>
 
           <div
-            class="iconImage h-12 w-12 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
+            class="iconImage h-16 w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
             id="neutralIcon" data-value="2"><img class="w-full h-full object-cover pointer-events-none"
-              src="/image/neutralIcon.svg" alt=""></div>
+              src="/icons/neutralIcon.svg" alt=""></div>
 
           <div
-            class="iconImage h-12 w-12 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
+            class="iconImage h-16 w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
             id="angryIcon" data-value="1"><img class="w-full h-full object-cover pointer-events-none"
-              src="/image/angryIcon.svg" alt=""></div>
+              src="/icons/angryIcon.svg" alt=""></div>
         </div>
         <button type="submit" id="next_joke"
-          class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-800 transition">Next Joke</button>
+          class="bg-slate-200  px-4 py-2 rounded-lg hover:bg-slate-600 hover:text-stone-200 transition">Next
+          Joke</button>
       </div>
 
     </div>

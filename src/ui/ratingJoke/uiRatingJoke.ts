@@ -1,8 +1,11 @@
-
 import { getDadJoke } from "../../logic/randomDadJoke/logicRandomJoke";
 import { saveRatings } from "../../logic/ratingsJoke/ratingsLogic";
 import { getRatings } from "../../services/storage/storgeLogic";
-import { nextJokeButton, printJoke } from "../randomJoke/uiRandomJoke";
+import {
+  getNewBlob,
+  nextJokeButton,
+  printJoke,
+} from "../randomJoke/uiRandomJoke";
 
 export const ratingDiv = document.getElementById("ratingDiv") as HTMLDivElement;
 
@@ -53,6 +56,7 @@ export async function initJokeUI(joke: string | undefined): Promise<void> {
     }
 
     newJoke = await getDadJoke();
+    getNewBlob();
     if (newJoke) {
       printJoke(newJoke);
     }
