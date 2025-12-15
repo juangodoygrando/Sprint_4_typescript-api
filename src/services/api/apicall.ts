@@ -1,7 +1,7 @@
 import type z from "zod";
 
 export const urlRandomDadJoke = import.meta.env.VITE_urlRandomDadJoke;
-export const urlOpenWeather = import.meta.env.VITE_urlOpenWeather;
+
 
 export async function apiCall<T>(
   url: string,
