@@ -1,4 +1,4 @@
-import { apiCall } from "../../services/api/apiCall";
+import { apiCall } from "../../services/api/apicall";
 import { getCoordinates } from "../../services/location/location";
 import { printWeather } from "../../ui/weather/uiWeather";
 import {
