@@ -1,0 +1,10 @@
+
+<!-- Environment variables must be configured in a `.env` file. Please copy all of this content and paste it into a `.env` file so you can use the variables. -->
+
+VITE_urlRandomDadJoke="https://icanhazdadjoke.com/"
+
+VITE_urlOfficialJoke="https://official-joke-api.appspot.com/random_joke"
+
+VITE_urlOpenWeather=https://api.openweathermap.org/data/2.5/weather?
+
+VITE_apiKeyOpenWeather=d1119635e8c2e176ec80e328ae6a2f8a
