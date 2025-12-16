@@ -1,80 +1,96 @@
 # JokeProject
 
-Este proyecto es una aplicación web desarrollada en TypeScript que permite obtener chistes aleatorios, calificarlos y consultar el clima. Utiliza APIs externas para obtener chistes y datos meteorológicos, y está estructurada para facilitar la escalabilidad y el mantenimiento.
+![Vista del proyecto](public/image/demo.png)
+
+This project is a web application developed in TypeScript that allows users to get random jokes, rate them, and check the weather. It uses external APIs to obtain jokes and weather data and is structured to facilitate scalability and maintenance.
+
+## Objectives
+
+- **Consuming Multiple APIs:** Implement logic to retrieve jokes from two different APIs and display local weather data using a third API.
+
+- **Strict Implementation in TypeScript:** Ensure the entire application is built in TypeScript, defining clear interfaces and types for all data structures.
+
+- **Asynchronous Handling:** Use Promises or async/await for all API consumption and data retrieval operations.
+
+- **User Tracking and State Management:** Maintain an internal array to track and store user-rated jokes.
+
+- **Advanced UI/UX:** Develop a high-quality, responsive design.
+
 
 ## Estructura de Carpetas
 
 ```
 jokeProject/
 │
-├── public/                # Archivos estáticos (imágenes, íconos, blobs)
-├── src/                   # Código fuente principal
-│   ├── logic/             # Lógica de negocio
+├── public/                # Static files (images, icons, blobs)
+├── src/                   # Main source code
+│   ├── logic/             # Business logic
 │   │   ├── controller.ts
-│   │   ├── randomDadJoke/         # Lógica y esquemas para chistes tipo Dad Joke
-│   │   ├── randomOfficialJoke/    # Lógica y esquemas para chistes oficiales
-│   │   ├── ratingsJoke/           # Lógica de calificación de chistes
-│   │   └── weather/               # Lógica y esquemas para el clima
-│   ├── services/         # Servicios auxiliares (API, fecha, localización, almacenamiento)
-│   └── ui/               # Lógica de interfaz de usuario
-│       ├── randomJoke/   # UI para chistes aleatorios
-│       ├── ratingJoke/   # UI para calificación de chistes
-│       └── weather/      # UI para clima
-├── index.html            # Archivo HTML principal
-├── style.css             # Estilos globales
-├── package.json          # Dependencias y scripts
-├── tsconfig.json         # Configuración de TypeScript
-├── tailwind.config.js    # Configuración de Tailwind CSS
-└── postcss.config.js     # Configuración de PostCSS
+│   │   ├── randomDadJoke/         # LLogic and schemes for Dad Jokes
+│   │   ├── randomOfficialJoke/    # LLogic and schemes for official jokes
+│   │   ├── ratingsJoke/           # Joke rating logic
+│   │   └── weather/               # LLogic and schemes for weather
+│   ├── services/         # Auxiliary services (API, date, location, storage)
+│   └── ui/               # User interface logic
+│       ├── randomJoke/   # UI for random jokes
+│       ├── ratingJoke/   # UI for joke ratings
+│       └── weather/      # UI for weather
+├── index.html            # Main HTML file
+├── style.css             # Global styles
+├── package.json          # Dependencies and scripts
+├── tsconfig.json         # TypeScript configuration
+├── tailwind.config.js    # Tailwind CSS configuration
+└── postcss.config.js     # PostCSS configuration
 ```
 
-## Tecnologías Usadas
+
+## Technologies Used
 
 - **TypeScript**
-- **Vite** (para desarrollo y build)
-- **Tailwind CSS** (estilos)
-- **APIs externas** (chistes y clima)
+- **Vite** (for development and builds)
+- **Tailwind CSS** (styles)
+- **External APIs** (jokes and weather)
 
-## Instalación y Uso
+## Installation and Usage
 
-1. **Clona el repositorio:**
+1. **Clone the repository:**
    ```bash
-   git clone <url-del-repositorio>
+   git clone <https://github.com/juangodoygrando/Sprint_4_typescript-api.git>
    cd jokeProject
    ```
 
-2. **Instala las dependencias:**
+2. **Install the dependencies:**
    ```bash
    npm install
    ```
 
-3. **Inicia el servidor de desarrollo:**
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
-   El proyecto estará disponible en `http://localhost:5173` (o el puerto que indique Vite).
 
-4. **Build para producción:**
+4. **Build for production:**
    ```bash
    npm run build
    ```
 
-## Dependencias Principales
+## Main Dependencies
 
 
-(Ver `package.json` para la lista completa de dependencias y scripts disponibles)
+(See `package.json` for the complete list of dependencies and available scripts)
 
-## Variables de entorno
+## Environment Variables
 
-Este proyecto utiliza variables de entorno.
+This project uses environment variables.
 
-1. Copie el archivo `.env.example`
-2. Renómbrelo a `.env`
+1. Copy the `.env.example` file.
+2. Rename it to `.env`.
 
-## Notas
-- Las APIs utilizadas pueden requerir conexión a internet.
-- Puedes personalizar los estilos modificando `style.css` y la configuración de Tailwind.
+## Notes
+- The APIs used may require an internet connection.
+
+- You can customize the styles by modifying `style.css` and the Tailwind settings.
 
 ---
 
-¡Disfruta usando JokeProject!
+Enjoy using JokeProject!
