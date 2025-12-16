@@ -10,19 +10,31 @@ export async function printWeather(
   const weather = await getWeather;
 
   if (weather) {
-    weatherWidget.innerHTML = `<div 
-      class="fixed top-5 right-5 w-44 bg-gray-300 bg-opacity-70 rounded-2xl shadow-lg p-4 text-center">
+    weatherWidget.innerHTML = `<div
+  class=" fixed top-5 right-5 w-52 h-64 p-6 text-center text-gray-700"
+  style="
+    background-image: url('/blob/blob_4.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  "
+>
+  <img id="weather-icon" class="mx-auto w-14 h-14 mb-1"
+       src="https://openweathermap.org/img/wn/${weather.icon}@2x.png" />
 
-      <img id="weather-icon" class="mx-auto w-16 h-16 mb-2" src="https://openweathermap.org/img/wn/${weather.icon}@2x.png" alt="Icono del clima">
+  <div class="text-sm font-semibold capitalize">
+    ${weather.description}
+  </div>
 
-      <div id="weather-main" class="text-lg font-bold mb-1">${weather.description}</div>
+  <div class="text-3xl font-extrabold">
+    ${weather.temp}°C
+  </div>
 
-      <div id="weather-temp" class="text-3xl font-extrabold mb-2">${weather.temp}°C</div>
-
-      <div id="weather-minmax" class="flex justify-between text-sm">
-        <span id="weather-min">Min: ${weather.temp_min}°C</span>
-        <span id="weather-max">Max: ${weather.temp_max}°C</span>
-      </div>
-    </div>`;
+  <div class="flex gap-2">
+    <span>Min ${weather.temp_min}°</span>
+    <span>Max ${weather.temp_max}°</span>
+  </div>
+</div>
+`;
   }
 }
