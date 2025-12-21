@@ -28,17 +28,17 @@ describe("getDadJoke", () => {
 describe("getOfficialJoke", () => {
   it("devuelve una broma de tipo string"),
     async () => {
-      vi.spyOn(api, "apiCall").mockResolvedValue("Esto es una broma");
+      vi.spyOn(api, "apiCall").mockResolvedValue({
+        joke: "Hola, soy una broma",
+      });
       const result = await getOfficialJoke();
       expect(result).toBe("Esto es una broma");
       expect(typeof result).toBe("string");
     };
 
-  it("devuelve undefined si apiCall falla", async () => {
+  it("lanza error si apiCall devuelve undefined", async () => {
     vi.spyOn(api, "apiCall").mockResolvedValue(undefined);
 
-    await expect(getOfficialJoke()).rejects.toThrow(
-    "No joke received"
-  );
+    await expect(getOfficialJoke()).rejects.toThrow("No joke received");
   });
 });
