@@ -1,10 +1,12 @@
 import type { storageStructure } from "./storageSchema";
 
-let reportJokes: storageStructure[] = JSON.parse(
-  localStorage.getItem("reportJokes") ?? "[]"
-);
+let reportJokes: storageStructure[] = [];
 
 export function getRatings(): storageStructure[] {
+  if (reportJokes.length === 0) {
+    const saved = localStorage.getItem("reportJokes");
+    reportJokes = saved ? JSON.parse(saved) : [];
+  }
   return [...reportJokes];
 }
 
