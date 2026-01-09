@@ -5,11 +5,10 @@ import { getOfficialJoke } from "./randomOfficialJoke/logicofficialJoke";
 export async function selectedApi(): Promise<string | undefined> {
   const randomNum = Math.floor(Math.random() * 2) + 1;
 
-  let joke: string | undefined;
   if (randomNum === 1) {
-    return (joke = await getDadJoke());
+    return await getDadJoke();
   } else {
-    return (joke = await getOfficialJoke());
+    return await getOfficialJoke();
   }
 }
 
