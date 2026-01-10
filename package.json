@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.0.2",
+    "@types/toastify-js": "^1.12.4",
     "@typescript-eslint/eslint-plugin": "^8.52.0",
     "@typescript-eslint/parser": "^8.52.0",
     "@vitejs/plugin-basic-ssl": "^2.1.3",
@@ -25,6 +26,7 @@
     "vitest": "^4.0.16"
   },
   "dependencies": {
+    "toastify-js": "^1.12.0",
     "zod": "^4.1.13"
   }
 }
