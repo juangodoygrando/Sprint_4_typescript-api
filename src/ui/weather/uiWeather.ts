@@ -11,26 +11,22 @@ export async function printWeather(
 
   if (weather) {
     weatherWidget.innerHTML = `<div
-  class=" fixed top-5 right-5 w-52 h-64 p-6 text-center text-gray-700"
-  style="
-    background-image: url('/blob/blob_4.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  class="w-auto h-auto text-center text-gray-700 bg-gradient-to-r from-teal-400/40  to-sky-600/40 px-1 pb-1 rounded-lg md:p-3"
+  
   "
 >
-  <img id="weather-icon" class="mx-auto w-14 h-14 mb-1"
+  <img id="weather-icon" class="mx-auto "
        src="https://openweathermap.org/img/wn/${weather.icon}@2x.png" />
 
-  <div class="text-sm font-semibold capitalize">
+  <div class="text-[12px] md:text-base font-semibold capitalize">
     ${weather.description}
   </div>
 
-  <div class="text-3xl font-extrabold">
+  <div class="text-sm md:text-xl font-extrabold">
     ${weather.temp}°C
   </div>
 
-  <div class="flex gap-2">
+  <div class="flex gap-1 text-[12px] md:text-xs justify-center capitalize">
     <span>Min ${weather.temp_min}°</span>
     <span>Max ${weather.temp_max}°</span>
   </div>

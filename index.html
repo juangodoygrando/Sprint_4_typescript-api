@@ -1,62 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/image/favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Project</title>
+  </head>
 
-  <title>Joke Project</title>
-</head>
-
-<body
-  class="bg-no-repeat bg-cover bg-fixed min-h-screen flex items-center justify-center" style="background-image: url('image/abstracta.jpg')">
-  
-
-  <main>
+  <body
+    class="flex items-center justify-center"
+    style="background-image: url('image/abstracta.jpg')"
+  >
     <div id="weather-widget"></div>
-
-
-
-
-    <div id="blobDiv"
-      class=" blob w-[98vw] max-w-3xl aspect-[1/1] bg-contain bg-center bg-no-repeat flex flex-col justify-center items-center"
-      style="background-image: url('./public/blob/blob_2.svg')">
-
-      <div class="w-full max-w-xl px-6 py-10
-              flex flex-col items-center text-center">
-
-        <h1 class="text-4xl font-bold mb-6">
+    <main>
+      <div
+        id="blobDiv"
+        class="blob bg-contain bg-center bg-no-repeat flex flex-col justify-center items-center w-[100%] h-[100Vh] md:w-[100%] md:h-[100Vh] lg:w-[100%] lg:h-[100Vh]"
+        style="background-image: url('/blob/blob_2.svg')"
+      >
+        <h1 class="text-xl font-bold capitalize text-justify lg:text-3xl">
           Ready to smile?
         </h1>
 
-        <h3 id="output_joke" class="text-lg font-bold mb-6"></h3>
+        <h3
+          id="output_joke"
+          class="text-xs font-semibold w-[60%] py-2 lg:text-xl"
+        ></h3>
 
-        <div class="flex justify-center gap-4 mb-8" id="ratingDiv">
+        <div class="flex justify-center gap-1 mb-2 lg:my-2" id="ratingDiv">
           <div
-            class="iconImage h-16 w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
-            id="happyIcon" data-value="3"><img class="w-full h-full object-cover pointer-events-none"
-              src="/icons/happyIcon.svg" alt=""></div>
+            class="iconImage h-12 w-12 lg:h-16 lg:w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
+            id="happyIcon"
+            data-value="3"
+          >
+            <img
+              class="w-full h-full object-cover pointer-events-none"
+              src="/icons/happyIcon.svg"
+              alt=""
+            />
+          </div>
 
           <div
-            class="iconImage h-16 w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
-            id="neutralIcon" data-value="2"><img class="w-full h-full object-cover pointer-events-none"
-              src="/icons/neutralIcon.svg" alt=""></div>
+            class="iconImage h-12 w-12 lg:h-16 lg:w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
+            id="neutralIcon"
+            data-value="2"
+          >
+            <img
+              class="w-full h-full object-cover pointer-events-none"
+              src="/icons/neutralIcon.svg"
+              alt=""
+            />
+          </div>
 
           <div
-            class="iconImage h-16 w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
-            id="angryIcon" data-value="1"><img class="w-full h-full object-cover pointer-events-none"
-              src="/icons/angryIcon.svg" alt=""></div>
+            class="iconImage h-12 w-12 lg:h-16 lg:w-16 rounded-full overflow-hidden inline-flex items-center justify-center cursor-pointer"
+            id="angryIcon"
+            data-value="1"
+          >
+            <img
+              class="w-full h-full object-cover pointer-events-none"
+              src="/icons/angryIcon.svg"
+              alt=""
+            />
+          </div>
         </div>
-        <button type="submit" id="next_joke"
-          class="bg-slate-200  px-4 py-2 rounded-lg hover:bg-slate-600 hover:text-stone-200 transition">Next
-          Joke</button>
+        <button
+          type="submit"
+          id="next_joke"
+          class="bg-slate-200 px-2 py-1 rounded-lg hover:bg-slate-600 hover:text-stone-200 transition lg:p-2"
+        >
+          Next Joke
+        </button>
       </div>
+    </main>
 
-    </div>
-  </main>
-
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

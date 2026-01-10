@@ -8,6 +8,16 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
+#weather-widget {
+  position: fixed !important;
+  top: 0.8rem;
+  right: 0.8rem;
+}
+
 .blob {
   animation: float 8s ease-in-out infinite;
 }
