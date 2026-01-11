@@ -1,7 +1,7 @@
 import {  z } from "zod";
 
 
-export const OfficialJokeResponse = z.object({
+ const OfficialJokeResponse = z.object({
   setup: z.string(),
   punchline: z.string(),
 });
@@ -12,4 +12,3 @@ export const officialJokeSchemaTransformed = OfficialJokeResponse.transform(
   })
 );
 
-export type officialJokeResponse=z.infer<typeof officialJokeSchemaTransformed >

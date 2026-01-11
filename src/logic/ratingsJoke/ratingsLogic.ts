@@ -1,9 +1,9 @@
 import { getDate } from "../../services/date/getDate";
-import type { storageStructure } from "../../services/storage/storageSchema";
+import type { StorageStructure } from "../../services/storage/storageSchema";
 import { addRating } from "../../services/storage/storageLogic";
 
 export function saveRatings(joke: string, score: string | undefined) {
-  const newRating: storageStructure = {
+  const newRating: StorageStructure = {
     joke: joke,
     score: score ?? "no score",
     date: getDate(),

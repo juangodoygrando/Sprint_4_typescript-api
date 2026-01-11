@@ -16,14 +16,3 @@ export function getCoordinates(): Promise<{ lat: number; lon: number }> {
     );
   });
 }
-
-
-export async function getLocation() {
-  try {
-    const { lat, lon } = await getCoordinates();
-
-    return `lat=${lat}&lon=${lon}`;
-  } catch (error) {
-    console.error("No se pudo obtener la ubicación:", error);
-  }
-}

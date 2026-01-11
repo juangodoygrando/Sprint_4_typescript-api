@@ -15,7 +15,4 @@ export function addRating(rating: StorageStructure): void {
   localStorage.setItem("reportJokes", JSON.stringify(reportJokes));
 }
 
-export function updateRatingsStorage(newlist: StorageStructure[]) {
-  reportJokes = newlist;
-  localStorage.setItem("reportJokes", JSON.stringify(reportJokes));
-}
+
