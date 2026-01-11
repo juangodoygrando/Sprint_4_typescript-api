@@ -1,4 +1,5 @@
-import z from "zod";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import  z from "zod";
 
 const storageSchema = z.object({
   joke: z.string(),
