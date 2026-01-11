@@ -2,6 +2,12 @@ import { describe, it, expect, vi } from "vitest";
 import { ZodType } from "zod";
 import { apiCall } from "../services/api/apicall";
 
+vi.mock("toastify-js", () => ({
+  default: vi.fn(() => ({
+    showToast: vi.fn(),
+  })),
+}));
+
 describe("apiCall", () => {
   it("devuelve datos si fetch responde bien", async () => {
     globalThis.fetch = vi.fn().mockResolvedValue({

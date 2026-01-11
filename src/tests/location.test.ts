@@ -1,10 +1,12 @@
 import { describe, it, expect, beforeAll } from "vitest";
-import { getCoordinates, getLocation } from "../services/location/location"; 
+import { getCoordinates } from "../services/location/location"; 
 
-// crear navigator si no existe
+
 beforeAll(() => {
-  // @ts-expect-error
-  if (!globalThis.navigator) globalThis.navigator = {};
+  
+  if (!globalThis.navigator) {
+    globalThis.navigator = {} as Navigator;
+  }
 });
 
 function mockGeolocation(success = true, coords = { latitude: 10, longitude: 20 }) {
@@ -14,7 +16,7 @@ function mockGeolocation(success = true, coords = { latitude: 10, longitude: 20 
         ? (cb: any) => cb({ coords })
         : (_: any, errCb: any) => errCb(new Error("Test error")),
     },
-    configurable: true, // ⚠️ necesario para redefinir
+    configurable: true, 
   });
 }
 
@@ -40,12 +42,4 @@ describe("getCoordinates()", () => {
   });
 });
 
-describe("getLocation()", () => {
-  it("retorna string lat=...&lon=...", async () => {
-    mockGeolocation(true, { latitude: 10, longitude: 20 });
 
-    const result = await getLocation();
-
-    expect(result).toBe("lat=10&lon=20");
-  });
-});

@@ -16,3 +16,4 @@ export function getCoordinates(): Promise<{ lat: number; lon: number }> {
     );
   });
 }
+
