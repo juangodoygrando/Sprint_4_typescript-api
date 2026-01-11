@@ -7,6 +7,13 @@ const weatherWidget = document.getElementById(
 export async function printWeather(
   getWeather: Promise<weatherResponse | undefined>
 ): Promise<void> {
+  weatherWidget.innerHTML = `
+    <div class="w-auto h-auto  p-3  flex flex-col rounded-lg items-center justify-center lg:fixed lg:top-5 lg:right-5 bg-gradient-to-r from-teal-400/40  to-sky-600/40">
+      <h4 class="mb-5 text-xs font-semibold">Loading weather...</h4>
+      <div class="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+    </div>
+  `;
+
   const weather = await getWeather;
 
   if (weather) {

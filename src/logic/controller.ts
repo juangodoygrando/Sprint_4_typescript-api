@@ -12,8 +12,22 @@ export async function getRandomJoke(): Promise<string | undefined> {
   }
 }
 
-export async function initJoke(): Promise<void> {
+/* export async function initJoke(): Promise<void> {
   const joke = await getRandomJoke();
 
   initJokeUI(joke);
+} */
+
+export async function initJoke(): Promise<void> {
+  // Mostrar spinner mientras carga
+  const jokeOutput = document.getElementById("output_joke");
+  if (jokeOutput) {
+    jokeOutput.innerHTML = `
+      <div class="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin mx-auto"></div>
+    `;
+  }
+
+  const joke = await getRandomJoke();
+
+  initJokeUI(joke); // Esto reemplaza el spinner con el chiste
 }
