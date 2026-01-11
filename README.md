@@ -1,8 +1,9 @@
 # JokeProject
+This project is a web application developed in TypeScript that allows users to get random jokes, rate them, and check the weather. It uses external APIs to obtain jokes and weather data and is structured to facilitate scalability and maintenance.
 
 ![Vista del proyecto](public/image/demo.png)
 
-This project is a web application developed in TypeScript that allows users to get random jokes, rate them, and check the weather. It uses external APIs to obtain jokes and weather data and is structured to facilitate scalability and maintenance.
+![Vista del proyecto - Mobile](public/image/demo-mobile.png)
 
 ## Objectives
 
