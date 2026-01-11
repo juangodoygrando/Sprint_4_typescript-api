@@ -12,14 +12,7 @@ export async function getRandomJoke(): Promise<string | undefined> {
   }
 }
 
-/* export async function initJoke(): Promise<void> {
-  const joke = await getRandomJoke();
-
-  initJokeUI(joke);
-} */
-
 export async function initJoke(): Promise<void> {
-  // Mostrar spinner mientras carga
   const jokeOutput = document.getElementById("output_joke");
   if (jokeOutput) {
     jokeOutput.innerHTML = `
@@ -29,5 +22,5 @@ export async function initJoke(): Promise<void> {
 
   const joke = await getRandomJoke();
 
-  initJokeUI(joke); // Esto reemplaza el spinner con el chiste
+  initJokeUI(joke);
 }
