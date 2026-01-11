@@ -22,8 +22,8 @@ export async function getLocation() {
   try {
     const { lat, lon } = await getCoordinates();
 
-    return `lat=${lat}&lon=${lon}`
-  } catch (err) {
-    console.error("No se pudo obtener la ubicación:", err);
+    return `lat=${lat}&lon=${lon}`;
+  } catch (error) {
+    console.error("No se pudo obtener la ubicación:", error);
   }
 }

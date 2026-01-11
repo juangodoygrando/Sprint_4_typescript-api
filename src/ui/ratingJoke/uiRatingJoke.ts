@@ -1,9 +1,9 @@
-import { selectedApi } from "../../logic/controller";
+import { getRandomJoke } from "../../logic/controller";
 import { saveRatings } from "../../logic/ratingsJoke/ratingsLogic";
 
-import { getRatings } from "../../services/storage/storgeLogic";
+import { getRatings } from "../../services/storage/storageLogic";
 import {
-  getNewBlob,
+  changeBlob,
   nextJokeButton,
   printJoke,
 } from "../randomJoke/uiRandomJoke";
@@ -19,7 +19,7 @@ function resetRatings(): void {
   allIcons.forEach((icon) => icon.classList.remove("grayscale"));
 }
 
-function ratingListeners(e: MouseEvent): void {
+function handleRatingClick(e: MouseEvent): void {
   const target = e.target as HTMLElement;
 
   if (!target.classList.contains("iconImage")) return;
@@ -32,7 +32,7 @@ function ratingListeners(e: MouseEvent): void {
   selectedRating = target.dataset.value;
 }
 
-function clickOutside(e: MouseEvent): void {
+function handleClickOutside(e: MouseEvent): void {
   const target = e.target as HTMLElement;
 
   const isIcon = target.classList.contains("iconImage");
@@ -48,16 +48,16 @@ export async function initJokeUI(joke: string | undefined): Promise<void> {
     printJoke(newJoke);
   }
 
-  ratingDiv.addEventListener("click", ratingListeners);
-  document.addEventListener("click", clickOutside);
+  ratingDiv.addEventListener("click", handleRatingClick);
+  document.addEventListener("click", handleClickOutside);
 
   nextJokeButton.addEventListener("click", async () => {
     if (newJoke) {
       saveRatings(newJoke, selectedRating);
     }
 
-    newJoke = await selectedApi();
-    getNewBlob();
+    newJoke = await getRandomJoke();
+    changeBlob();
     if (newJoke) {
       printJoke(newJoke);
     }

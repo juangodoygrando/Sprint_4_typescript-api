@@ -11,9 +11,9 @@ export function printJoke(joke: string): void {
   jokeContainer.textContent = joke;
 }
 
-export function getNewBlob() {
+export function changeBlob() {
   const randomBlob = Math.floor(Math.random() * 10) + 1;
-  const newUrl = `/blob/blob_${randomBlob}.svg`;
+  const blobUrl = `/blob/blob_${randomBlob}.svg`;
 
-  blobDiv.style.backgroundImage = `url('${newUrl}')`;
+  blobDiv.style.backgroundImage = `url('${blobUrl}')`;
 }

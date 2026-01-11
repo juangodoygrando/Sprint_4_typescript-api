@@ -7,4 +7,4 @@ const storageSchema = z.object({
   date: z.string().nullable(),
 });
 
-export type storageStructure = z.infer<typeof storageSchema>;
+export type StorageStructure = z.infer<typeof storageSchema>;

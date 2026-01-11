@@ -1,6 +1,6 @@
 import z from "zod";
 
-const weatherSchema = z.object({
+const WeatherResponse = z.object({
   weather: z.array(
     z.object({
       description: z.string(),
@@ -14,7 +14,7 @@ const weatherSchema = z.object({
   }),
 });
 
-export const weatherSchemaTransformed = weatherSchema.transform((data) => ({
+export const weatherSchemaTransformed = WeatherResponse.transform((data) => ({
   description: data.weather[0].description,
   icon: data.weather[0].icon,
   temp: Math.floor(data.main.temp),

@@ -1,7 +1,7 @@
 import type z from "zod";
 
-import Toastify from 'toastify-js';           
-import 'toastify-js/src/toastify.css'; 
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
 
 export async function apiCall<T>(
   url: string,
@@ -9,13 +9,13 @@ export async function apiCall<T>(
   options?: RequestInit
 ): Promise<T | undefined> {
   try {
-    const resp = await fetch(url, options);
+    const response = await fetch(url, options);
 
-    if (!resp.ok) {
-      throw new Error(`${resp.status}`);
+    if (!response.ok) {
+      throw new Error(`${response.status}`);
     }
-    const json = await resp.json();
-    const data = schema.parse(json);
+    const jsonData = await response.json();
+    const data = schema.parse(jsonData);
 
     return data;
   } catch (error) {

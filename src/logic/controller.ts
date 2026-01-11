@@ -1,11 +1,11 @@
 import { initJokeUI } from "../ui/ratingJoke/uiRatingJoke";
-import { getDadJoke } from "./randomDadJoke/logicDadJoke";
-import { getOfficialJoke } from "./randomOfficialJoke/logicofficialJoke";
+import { getDadJoke } from "./randomDadJoke/dadJoke";
+import { getOfficialJoke } from "./randomOfficialJoke/officialJoke";
 
-export async function selectedApi(): Promise<string | undefined> {
-  const randomNum = Math.floor(Math.random() * 2) + 1;
+export async function getRandomJoke(): Promise<string | undefined> {
+  const apiChoice = Math.floor(Math.random() * 2) + 1;
 
-  if (randomNum === 1) {
+  if (apiChoice === 1) {
     return await getDadJoke();
   } else {
     return await getOfficialJoke();
@@ -13,7 +13,7 @@ export async function selectedApi(): Promise<string | undefined> {
 }
 
 export async function initJoke(): Promise<void> {
-  const joke = await selectedApi();
+  const joke = await getRandomJoke();
 
   initJokeUI(joke);
 }

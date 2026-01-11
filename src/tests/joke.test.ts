@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
-import { getDadJoke } from "../logic/randomDadJoke/logicDadJoke";
+import { getDadJoke } from "../logic/randomDadJoke/dadJoke";
 import * as api from "../services/api/apicall";
-import { getOfficialJoke } from "../logic/randomOfficialJoke/logicofficialJoke";
+import { getOfficialJoke } from "../logic/randomOfficialJoke/officialJoke";
 
 vi.mock("./apiCall", () => ({
   apiCall: vi.fn(),

@@ -8,15 +8,15 @@ import {
 } from "./weatherSchema";
 
 
-async function  getUrlWeather() {
+async function buildWeatherUrl() {
   const { lat, lon } = await getCoordinates();
 
-  const url =`${URL_OPENWEATHER}lat=${lat}&lon=${lon}&appid=${APIKEY_OPENWEATHER}&units=metric`;
+  const url = `${URL_OPENWEATHER}lat=${lat}&lon=${lon}&appid=${APIKEY_OPENWEATHER}&units=metric`;
   return url;
 }
 
  async function getWeather(): Promise<weatherResponse | undefined> {
-  return apiCall(await getUrlWeather(), weatherSchemaTransformed);
+  return apiCall(await buildWeatherUrl(), weatherSchemaTransformed);
 }
 
 

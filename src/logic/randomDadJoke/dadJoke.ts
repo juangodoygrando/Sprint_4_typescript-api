@@ -1,10 +1,10 @@
 import { apiCall } from "../../services/api/apicall";
 import { URL_DADJOKE } from "../../services/env";
 
-import { jokeDadSchema } from "./jokeDadSchema";
+import { DadJokeResponse } from "./jokeDadSchema";
 
 export async function getDadJoke(): Promise<string | undefined> {
-  return apiCall(URL_DADJOKE, jokeDadSchema, {
+  return apiCall(URL_DADJOKE, DadJokeResponse, {
     headers: { Accept: "application/json" },
   });
 }

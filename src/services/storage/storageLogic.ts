@@ -1,8 +1,8 @@
-import type { storageStructure } from "./storageSchema";
+import type { StorageStructure } from "./storageSchema";
 
-let reportJokes: storageStructure[] = [];
+let reportJokes: StorageStructure[] = [];
 
-export function getRatings(): storageStructure[] {
+export function getRatings(): StorageStructure[] {
   if (reportJokes.length === 0) {
     const saved = localStorage.getItem("reportJokes");
     reportJokes = saved ? JSON.parse(saved) : [];
@@ -10,12 +10,12 @@ export function getRatings(): storageStructure[] {
   return [...reportJokes];
 }
 
-export function addRating(rating: storageStructure): void {
+export function addRating(rating: StorageStructure): void {
   reportJokes.push(rating);
   localStorage.setItem("reportJokes", JSON.stringify(reportJokes));
 }
 
-export function updateRatingsStorage(newlist: storageStructure[]) {
+export function updateRatingsStorage(newlist: StorageStructure[]) {
   reportJokes = newlist;
   localStorage.setItem("reportJokes", JSON.stringify(reportJokes));
 }
